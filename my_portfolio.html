@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background: #020617;
+    }
+    header h1 { color: #38bdf8; }
+    nav a {
+      margin-left: 20px;
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    nav a:hover { color: #38bdf8; }
+
+    section {
+      padding: 60px 50px;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      text-align: left;
+    }
+
+    .hero img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #38bdf8;
+    }
+
+    .hero-text {
+      max-width: 400px;
+    }
+    .hero h2 {
+      font-size: 40px;
+    }
+    .hero span { color: #38bdf8; }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #020617;
+      padding: 20px;
+      border-radius: 15px;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .contact input, .contact textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+    }
+    button {
+      padding: 10px 20px;
+      background: #38bdf8;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .toggle-btn {
+      cursor: pointer;
+      padding: 8px 15px;
+      background: #38bdf8;
+      border-radius: 8px;
+      border: none;
+    }
+
+    .light-mode {
+      background: #f1f5f9;
+      color: #020617;
+    }
+
+    .light-mode header {
+      background: #e2e8f0;
+    }
+
+    .light-mode .card {
+      background: #ffffff;
+      color: #020617;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>MyPortfolio</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="toggle-btn" onclick="toggleMode()">Dark/Light</button>
+</header>
+
+<section class="hero">
+  <img src="photo_cv.png" alt="Profile Photo">
+  <div class="hero-text">
+    <h2>Hello, I'm <span>Helmi Dhaouadi</span></h2>
+    <p>Future Data Analysis | Web Developer</p>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>I am passionate about data, web development, and building modern applications.</p>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+
+  <h3>Frontend</h3>
+  <div class="projects">
+    <div class="card">HTML</div>
+    <div class="card">CSS</div>
+    <div class="card">JavaScript</div>
+    <div class="card">Reactjs</div>
+    <div class="card">Nextjs</div>
+
+
+  </div>
+
+  <h3>Backend</h3>
+  <div class="projects">
+    <div class="card">Node.js</div>
+    <div class="card">Express</div>
+  </div>
+
+  <h3>Data</h3>
+  <div class="projects">
+    <div class="card">Python</div>
+    <div class="card">SQL</div>
+    <div class="card">Pandas</div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="card">
+      <h3>E-commerce Website</h3>
+      <p>Online store with product listing, shopping cart, and checkout system using HTML, CSS, and JavaScript.</p>
+    </div>
+    <div class="card">
+      <h3>Task Management App</h3>
+      <p>Web app to manage daily tasks with add, delete, and update features using JavaScript and local storage.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact Me</h2>
+  <input type="text" placeholder="Your Name">
+  <input type="email" placeholder="Your Email">
+  <textarea placeholder="Your Message"></textarea>
+  <button onclick="sendMessage()">Send</button>
+</section>
+
+<script>
+  function sendMessage() {
+    alert("Message sent successfully!");
+  }
+  function toggleMode() {
+    document.body.classList.toggle("light-mode");
+  }
+</script>
+
+</body>
+</html>
